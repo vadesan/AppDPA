@@ -52,7 +52,7 @@ fun HomeScreen(){
                         Image(
                             contentDescription = country.name,
                             contentScale = ContentScale.Crop,
-                            modifier = Modifier.size(32.dp).padding(4.dp),
+                            modifier = Modifier.size(40.dp).padding(4.dp),
                             painter = rememberAsyncImagePainter(country.imageUrl)
                         )
 
