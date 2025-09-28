@@ -1,6 +1,5 @@
 package dev.luischang.appdpa.presentation.home
 
-import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,19 +16,24 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import dev.luischang.appdpa.data.model.CountryModel
 
 val mockCountries = listOf(
-    CountryModel("Colombia", 11, "https://flagcdn.com/w320/co.png"),
-    CountryModel("Ecuador", 13, "https://flagcdn.com/w320/ec.png"),
-    CountryModel("Peru", 60, "https://flagcdn.com/w320/pe.png"),
-    CountryModel("Venezuela", 40, "https://flagcdn.com/w320/ve.png"),
-    CountryModel("Bolivia", 38, "https://flagcdn.com/w320/bo.png"),
-    CountryModel("Chile", 70, "https://flagcdn.com/w320/cl.png"),
-    CountryModel("Argentina", 1, "https://flagcdn.com/w320/ar.png"),
+    CountryModel("Colombia", 11, "https://flagcdn.com/64x48/co.png"),
+    CountryModel("Ecuador", 11, "https://flagcdn.com/64x48/ec.png"),
+    CountryModel("Peru", 11, "https://flagcdn.com/64x48/pe.png"),
+    CountryModel("Uruguay", 11, "https://flagcdn.com/64x48/uy.png"),
+    CountryModel("Paraguay", 11, "https://flagcdn.com/64x48/pr.png"),
+    CountryModel("Chile", 11, "https://flagcdn.com/64x48/cl.png"),
+    CountryModel("Argentina", 11, "https://flagcdn.com/64x48/ar.png"),
+    CountryModel("Ecuador", 11, "https://flagcdn.com/64x48/ec.png"),
+    CountryModel("Peru", 11, "https://flagcdn.com/64x48/pe.png"),
+    CountryModel("Uruguay", 11, "https://flagcdn.com/64x48/uy.png"),
+    CountryModel("Paraguay", 11, "https://flagcdn.com/64x48/pr.png"),
+    CountryModel("Chile", 11, "https://flagcdn.com/64x48/cl.png"),
+    CountryModel("Argentina", 11, "https://flagcdn.com/64x48/ar.png")
 )
 @Composable
 fun HomeScreen(){
@@ -39,17 +43,17 @@ fun HomeScreen(){
         Text("Ranking FIFA 2025" , style = MaterialTheme.typography.titleLarge)
         Spacer(modifier = Modifier.height(16.dp))
 
-        LazyColumn{
+        LazyColumn {
             items(mockCountries) { country ->
                 Card(
-                    modifier = Modifier.fillMaxSize().padding(vertical = 8.dp),
+                    modifier = Modifier.fillMaxSize().padding(vertical = 2.dp)
                 ){
-                    Row(modifier = Modifier.padding(12.dp)){
+                    Row(modifier = Modifier.padding(4.dp)){
                         Image(
-                            painter = rememberAsyncImagePainter(country.imageUrl),
                             contentDescription = country.name,
-                            //contentScale = ContentScale.Crop,
-                            modifier = Modifier.size(64.dp)
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier.size(32.dp).padding(4.dp),
+                            painter = rememberAsyncImagePainter(country.imageUrl)
                         )
 
                         Column {
