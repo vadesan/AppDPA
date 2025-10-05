@@ -8,6 +8,7 @@ import dev.luischang.appdpa.presentation.auth.LoginScreen
 import dev.luischang.appdpa.presentation.auth.RegisterScreen
 import dev.luischang.appdpa.presentation.home.HomeScreen
 import androidx.compose.material3.Text
+import dev.luischang.appdpa.presentation.permissions.GalleryPermissionScreen
 
 @Composable
 fun AppNavGraph(){
@@ -24,7 +25,8 @@ fun AppNavGraph(){
         }
         composable("permissions") {
             DrawerScaffold(navController) {
-                Text("Proximamente pantalla de permisos ...")
+                // Text("Proximamente pantalla de permisos ...")
+                GalleryPermissionScreen()
             }
         }
         composable("favorites") {
